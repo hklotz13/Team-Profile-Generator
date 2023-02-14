@@ -57,23 +57,42 @@ const createIntern = function (intern) {
     </div>`;
 }
 
+//                          *
+// Example Team // --> [Manager, Engineer, Enginer, Intern]
 //grabs info from functions to add to cards, then add to array
-html.push(team
+htmlArray.push(team
     .filter(employee => employee.getRole() === "Manager")
     .map(manager => createManager(manager)));
-html.push(team
+
+htmlArray.push(team
     .filter(employee => employee.getRole() === "Engineer")
     .map(engineer => createEngineer(engineer))
     .join(""));
-html.push(team
+
+htmlArray.push(team
     .filter(employee => employee.getRole() === "Intern")
     .map(intern => createIntern(intern))
     .join(""));
-return html.join("");
+    // we "SHOULD" be returning a SINGLE STRING OBJECT that hass all CARDS
+ return html.join("");
+
+    // call The addCard(DATA);
+    //addCards(htmlArray);
 }
 
+// 
+// function addCards(teamArrayObject) {
+
+//     // loop through an array
+
+//     // what do we want to return from the function?  --> STRING or CARD Data
+
+// }
+
 //exports to create final html page
-function team() {
+function team(team) {
+    console.log(team);
+
     return `
         <!DOCTYPE html>
         <head>
@@ -97,4 +116,5 @@ function team() {
         </html>`;
 };
 
-module.exports = {createTeam, team};
+//module.exports = createTeam;
+module.exports = { createTeam, team };
