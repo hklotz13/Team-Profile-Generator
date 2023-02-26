@@ -74,7 +74,7 @@ htmlArray.push(team
     .map(intern => createIntern(intern))
     .join(""));
     // we "SHOULD" be returning a SINGLE STRING OBJECT that hass all CARDS
- return html.join("");
+ return htmlArray.join("");
 
     // call The addCard(DATA);
     //addCards(htmlArray);

@@ -89,7 +89,8 @@ function addMoreEmployees() {
         message: "Add more employees to this team?",
         name: "otherEmployees"
     }).then(function (addMoreEmployees) {
-        if (addMoreEmployees) {
+        console.log(addMoreEmployees)
+        if (addMoreEmployees.otherEmployees) {
             initializeApp();
         } else {
             // Verify we have created a new TEAM
@@ -105,7 +106,7 @@ function addMoreEmployees() {
 function createHTML() {
     // CRTEATE THE HTML PAGE --> PASS IT DATA WE collected from the USER
     var resultData = team(teamArray);  // this 'should' be our constructed HTML page
-    fs.writeFileSync("./assets/index.html", data, err);
+    fs.writeFileSync("./assets/index.html", resultData);
 }
 }
 
